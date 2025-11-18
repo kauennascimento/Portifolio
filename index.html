@@ -145,16 +145,28 @@
         <div class="projects">
 
           <article class="card">
-            <div class="project-preview" style="background:linear-gradient(90deg,#052036,#073554)"> <img src="img2.png" alt=""> </div>
+            <div class="project-preview" style="background:linear-gradient(90deg,#052036,#073554)">
+              <img src="img2.png" alt="projeto1"
+              style="width: 100%; height: 100%; object-fit: cover;">
+
+            </div>
+
             <h4>Hamburgueria LTecnologia</h4>
             <p style="color:var(--muted);margin:6px 0 0">Site completo criado durante meu estágio. Responsivo e otimizado — HTML, CSS e JS.</p>
           </article>
 
           <article class="card">
-            <div class="project-preview" style="background:linear-gradient(90deg,#2b044a,#7c3aed)"></div>
+            <div class="project-preview" style="background:linear-gradient(90deg,#2b044a,#7c3aed); overflow:hidden;">
+              <img src="img3.jpg" alt="" 
+                  style="width:100%; height:100%; object-fit:cover; object-position:center;">
+            </div>
+
             <h4>Site para Advogado</h4>
-            <p style="color:var(--muted);margin:6px 0 0">Criado no WordPress durante o estágio. Layout profissional e páginas customizadas.</p>
+            <p style="color:var(--muted);margin:6px 0 0">
+              Criado no WordPress durante o estágio. Layout profissional e páginas customizadas.
+            </p>
           </article>
+
 
         </div>
       </section>
@@ -163,7 +175,7 @@
         <h2>Sobre mim</h2>
         <div class="card" style="margin-top:10px">
           <p style="color:var(--muted)">
-            Sou Kauê Ryomen, desenvolvedor Front-end iniciante.  
+            Sou Kauê Nascimento, desenvolvedor Front-end iniciante.  
             Já desenvolvi projetos reais durante meu estágio na LTecnologia, incluindo um site de hamburgueria e outro para um advogado.  
             Meu foco atual é dominar HTML, CSS e JavaScript, além de responsividade e boas práticas.
           </p>
@@ -197,7 +209,7 @@
           <div style="min-width:220px">
             <div style="margin-bottom:12px">
               <strong>Email</strong>
-              <div style="color:var(--muted)">kaue@exemplo.com</div>
+              <div style="color:var(--muted)">kauenascimento1578@gmail.com</div>
             </div>
 
             <div style="margin-bottom:12px">
@@ -216,29 +228,36 @@
     </main>
 
     <footer>
-      <div>© <span id="year"></span> Kauê Ryomen — todos os direitos reservados</div>
+      <div>© <span id="year"></span> Kauê Nascimento — todos os direitos reservados</div>
     </footer>
 
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("SEU_PUBLIC_KEY"); // Public Key do EmailJS
+  })();
 
-    function handleContact(e){
-      e.preventDefault();
-      const f = e.target;
-      const name = f.name.value.trim();
-      const email = f.email.value.trim();
-      const message = f.message.value.trim();
-      const notice = document.getElementById('formNotice');
-      if(!name || !email || !message){ notice.textContent = 'Preencha todos os campos.'; return }
+  async function handleContact(e){
+    e.preventDefault();
+    const notice = document.getElementById("formNotice");
 
-      const subject = encodeURIComponent('Contato via site: ' + name);
-      const body = encodeURIComponent(message + '\n\n---\n' + name + ' | ' + email);
+    const params = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value
+    };
 
-      window.location.href = `mailto:kaue@exemplo.com?subject=${subject}&body=${body}`;
-      notice.textContent = 'Abrindo cliente de email...';
+    try {
+      await emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", params);
+      notice.textContent = "Mensagem enviada com sucesso!";
+      e.target.reset();
+    } catch (err) {
+      notice.textContent = "Erro ao enviar. Tente novamente.";
     }
-  </script>
+   }
+</script>
+
 </body>
 </html>
