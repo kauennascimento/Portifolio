@@ -13,7 +13,7 @@
   <meta property="og:locale" content="pt_BR">
   <link rel="canonical" href="https://seusite.com/"> <!-- troque pela URL real -->
 
-  <!-- Preconnect / Font (opcional: substitua se tiver fonte local) -->
+  <!-- Preconnect / Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -22,10 +22,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Seu Nome",
+    "name": "Kauê Ryomen",
     "url": "https://seusite.com/",
     "sameAs": [],
-    "jobTitle": "Desenvolvedor Web"
+    "jobTitle": "Desenvolvedor Front-end"
   }
   </script>
 
@@ -86,8 +86,8 @@
       <div class="brand">
         <div class="logo">K</div>
         <div>
-          <div style="font-weight:600">Kauê</div>
-          <div style="font-size:13px;color:var(--muted)">Desenvolvedor Web • Front‑end</div>
+          <div style="font-weight:600">Kauê Ryomen</div>
+          <div style="font-size:13px;color:var(--muted)">Desenvolvedor Web • Front-end</div>
         </div>
       </div>
       <nav aria-label="Menu principal">
@@ -100,8 +100,10 @@
     <main>
       <section class="hero">
         <div class="card">
-          <h1>Olá — eu sou <span style="color:var(--accent)"> Kauê </span>, <br> Sou Desenvolvedor Front-end Iniciante.</h1>
-          <p class="lead">Tenho 18 anos, sou formado no Ensino Médio e atualmente estudo desenvolvimento Front-end. Meu objetivo é evoluir para Full Stack no futuro, construindo aplicações completas e funcionais.</p>
+          <h1>Olá — eu sou <span style="color:var(--accent)"> Kauê Ryomen </span>, <br> Desenvolvedor Front-end Iniciante.</h1>
+
+          <p class="lead">Tenho 18 anos, sou formado no Ensino Médio e estudo desenvolvimento Front-end. Meu objetivo é evoluir para Full Stack e construir aplicações completas e profissionais.</p>
+
           <div class="cta">
             <a class="btn" href="#contato">Contrate</a>
             <a class="btn" href="#projetos">Ver projetos</a>
@@ -127,7 +129,7 @@
 
         <aside class="card" aria-label="Destaque">
           <h3 style="margin-top:0">Resumo</h3>
-          <p style="color:var(--muted);margin-bottom:14px">Fullstack minimal — HTML semântico, CSS limpo, JS necessário apenas para interações. Entregue pronto para enviar em projetos.</p>
+          <p style="color:var(--muted);margin-bottom:14px">Front-end minimalista — HTML semântico, CSS organizado, interfaces rápidas e claras. Experiência com responsividade e boas práticas.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <div class="btn">HTML</div>
             <div class="btn">CSS</div>
@@ -139,25 +141,32 @@
 
       <section id="projetos" style="margin-top:6px">
         <h2 style="margin-bottom:12px">Projetos</h2>
+
         <div class="projects">
+
           <article class="card">
             <div class="project-preview" style="background:linear-gradient(90deg,#052036,#073554)"></div>
-            <h4>Projeto A</h4>
-            <p style="color:var(--muted);margin:6px 0 0">Descrição curta do projeto. Tecnologias: HTML, CSS, JS.</p>
+            <h4>Hamburgueria LTecnologia</h4>
+            <p style="color:var(--muted);margin:6px 0 0">Site completo criado durante meu estágio. Responsivo e otimizado — HTML, CSS e JS.</p>
           </article>
 
           <article class="card">
             <div class="project-preview" style="background:linear-gradient(90deg,#2b044a,#7c3aed)"></div>
-            <h4>Projeto B</h4>
-            <p style="color:var(--muted);margin:6px 0 0">Descrição curta do projeto. Link para demo ou repositório.</p>
+            <h4>Site para Advogado</h4>
+            <p style="color:var(--muted);margin:6px 0 0">Criado no WordPress durante o estágio. Layout profissional e páginas customizadas.</p>
           </article>
+
         </div>
       </section>
 
       <section id="sobre" style="margin-top:24px">
         <h2>Sobre mim</h2>
         <div class="card" style="margin-top:10px">
-          <p style="color:var(--muted)">Sou estudante/desenvolvedor com foco em interfaces web, otimização e boas práticas. Insira aqui sua experiência resumida e certificações.</p>
+          <p style="color:var(--muted)">
+            Sou Kauê Ryomen, desenvolvedor Front-end iniciante.  
+            Já desenvolvi projetos reais durante meu estágio na LTecnologia, incluindo um site de hamburgueria e outro para um advogado.  
+            Meu foco atual é dominar HTML, CSS e JavaScript, além de responsividade e boas práticas.
+          </p>
         </div>
       </section>
 
@@ -168,23 +177,38 @@
             <label style="display:block;margin-bottom:8px">Nome<br>
               <input name="name" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
             </label>
+
             <label style="display:block;margin-bottom:8px">Email<br>
               <input name="email" type="email" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
             </label>
+
             <label style="display:block;margin-bottom:8px">Mensagem<br>
               <textarea name="message" rows="4" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
             </label>
+
             <div style="display:flex;gap:8px;margin-top:8px">
               <button class="btn" type="submit">Enviar</button>
               <button class="btn" type="reset">Limpar</button>
             </div>
+
             <div id="formNotice" style="margin-top:10px;color:var(--muted);font-size:14px"></div>
           </form>
 
           <div style="min-width:220px">
-            <div style="margin-bottom:12px"><strong>Email</strong><div style="color:var(--muted)">seu@email.com</div></div>
-            <div style="margin-bottom:12px"><strong>Localização</strong><div style="color:var(--muted)">Fortaleza, Brasil</div></div>
-            <div style="margin-bottom:12px"><strong>LinkedIn</strong><div style="color:var(--muted)">/seu-perfil</div></div>
+            <div style="margin-bottom:12px">
+              <strong>Email</strong>
+              <div style="color:var(--muted)">kaue@exemplo.com</div>
+            </div>
+
+            <div style="margin-bottom:12px">
+              <strong>Localização</strong>
+              <div style="color:var(--muted)">Fortaleza — Brasil</div>
+            </div>
+
+            <div style="margin-bottom:12px">
+              <strong>LinkedIn</strong>
+              <div style="color:var(--muted)">linkedin.com/in/seu-perfil</div>
+            </div>
           </div>
         </div>
       </section>
@@ -192,13 +216,12 @@
     </main>
 
     <footer>
-      <div>© <span id="year"></span> Seu Nome — todos os direitos reservados</div>
+      <div>© <span id="year"></span> Kauê Ryomen — todos os direitos reservados</div>
     </footer>
 
   </div>
 
   <script>
-    // small interactive JS: mobile menu placeholder + contact form
     document.getElementById('year').textContent = new Date().getFullYear();
 
     function handleContact(e){
@@ -210,19 +233,12 @@
       const notice = document.getElementById('formNotice');
       if(!name || !email || !message){ notice.textContent = 'Preencha todos os campos.'; return }
 
-      // Progressive enhancement: fallback to mailto if no backend configured
       const subject = encodeURIComponent('Contato via site: ' + name);
       const body = encodeURIComponent(message + '\n\n---\n' + name + ' | ' + email);
-      window.location.href = `mailto:seu@email.com?subject=${subject}&body=${body}`;
+
+      window.location.href = `mailto:kaue@exemplo.com?subject=${subject}&body=${body}`;
       notice.textContent = 'Abrindo cliente de email...';
     }
   </script>
-
-  <!-- Performance tips (comentários):
-       - Substitua imagens por versões otimizadas (.webp) e use srcset para responsividade.
-       - Habilite cache no servidor (Cache-Control) e sirva arquivos minificados em produção.
-       - Para formulários profissionais, use um endpoint (e.g. Formspree, Netlify Forms) ou configure um backend.
-       - Rode uma auditoria Lighthouse e corrija avisos de acessibilidade/performance.
-  -->
 </body>
 </html>
