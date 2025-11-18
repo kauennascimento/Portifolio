@@ -185,26 +185,30 @@
       <section id="contato" style="margin-top:24px">
         <h2>Contato</h2>
         <div class="card" style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">
-          <form id="contactForm" style="flex:1;min-width:260px" onsubmit="handleContact(event)" novalidate>
-            <label style="display:block;margin-bottom:8px">Nome<br>
-              <input name="name" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-            </label>
+        <form action="https://formsubmit.co/kauenascimento1578@gmail.com" method="POST" style="flex:1;min-width:260px">
+          
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
 
-            <label style="display:block;margin-bottom:8px">Email<br>
-              <input name="email" type="email" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-            </label>
+          <label style="display:block;margin-bottom:8px">Nome<br>
+            <input name="name" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          </label>
 
-            <label style="display:block;margin-bottom:8px">Mensagem<br>
-              <textarea name="message" rows="4" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
-            </label>
+          <label style="display:block;margin-bottom:8px">Email<br>
+            <input name="email" type="email" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          </label>
 
-            <div style="display:flex;gap:8px;margin-top:8px">
-              <button class="btn" type="submit">Enviar</button>
-              <button class="btn" type="reset">Limpar</button>
-            </div>
+          <label style="display:block;margin-bottom:8px">Mensagem<br>
+            <textarea name="message" rows="4" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          </label>
 
-            <div id="formNotice" style="margin-top:10px;color:var(--muted);font-size:14px"></div>
-          </form>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" type="submit">Enviar</button>
+            <button class="btn" type="reset">Limpar</button>
+          </div>
+
+        </form>
+
 
           <div style="min-width:220px">
             <div style="margin-bottom:12px">
@@ -232,32 +236,6 @@
     </footer>
 
   </div>
-
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("SEU_PUBLIC_KEY"); // Public Key do EmailJS
-  })();
-
-  async function handleContact(e){
-    e.preventDefault();
-    const notice = document.getElementById("formNotice");
-
-    const params = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value
-    };
-
-    try {
-      await emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", params);
-      notice.textContent = "Mensagem enviada com sucesso!";
-      e.target.reset();
-    } catch (err) {
-      notice.textContent = "Erro ao enviar. Tente novamente.";
-    }
-   }
-</script>
 
 </body>
 </html>
